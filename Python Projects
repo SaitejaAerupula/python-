@@ -1,0 +1,26 @@
+import random
+
+# Function to start the game
+def guess_number_game():
+    print("Welcome to the Number Guessing Game!")
+    
+    # Program randomly selects a number between 1 and 100
+    number_to_guess = random.randint(1, 100)
+    guess = None
+    attempts = 0
+
+    # Loop until the player guesses correctly
+    while guess != number_to_guess:
+        guess = int(input("Guess a number between 1 and 100: "))
+        attempts += 1
+
+        # Give hints whether the guess is too high or too low
+        if guess < number_to_guess:
+            print("Too low! Try again.")
+        elif guess > number_to_guess:
+            print("Too high! Try again.")
+    
+    print(f"Congratulations! You've guessed the number {number_to_guess} in {attempts} attempts.")
+
+# Start the game
+guess_number_game()
